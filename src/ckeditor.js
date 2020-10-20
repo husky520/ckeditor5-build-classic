@@ -29,6 +29,9 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import Hightlight from '@ckeditor/ckeditor5-highlight/src/highlight';
+import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -56,21 +59,28 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Alignment,
+	Hightlight
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+	plugins: [
+		WordCount
+	],
 	toolbar: {
 		items: [
 			'heading',
 			'|',
+			'alignment',
 			'bold',
 			'italic',
 			'link',
+			'hightlight',
+			'|',
 			'bulletedList',
 			'numberedList',
-			'|',
 			'indent',
 			'outdent',
 			'|',
